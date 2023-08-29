@@ -44,10 +44,11 @@
 ### 2023.8.10
 
 #### EDA 접근
-![화면 캡처 2023-08-13 031115](https://github.com/DevTae/StockDatabasePreview/assets/55177359/b9340afa-88bd-4cf8-b92b-9c0c3dbb580b)
 - 결과층 데이터가 `특정 구간에 몰려 있는 것`을 확인 / 이러한 부분이 `데이터 불균형`을 뜻하고 `학습 평가 검증`이 다소 어려워질 수 있음
 - 따라서, `결과값 확대 및 축소 함수(log 및 sqrt 공식)`를 적용하여 다음과 같이 `정규 분포 형태의 데이터 분포`로 구성할 수 있었다.
-- 이전의 문제점을 해결할 수 있어 당장에는 Data Augmentation 을 적용하지 않고 학습을 진행하고자 한다.
+  
+  ![화면 캡처 2023-08-13 031115](https://github.com/DevTae/StockDatabasePreview/assets/55177359/b9340afa-88bd-4cf8-b92b-9c0c3dbb580b)
+- 데이터 분포의 문제를 해결할 수 있어 당장에는 Data Augmentation 을 적용하지 않고 학습을 진행하고자 한다.
   - 데이터 수는 약 160만 개로 충분히 커버가 가능할 듯 보인다.
 
 <br/>
