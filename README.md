@@ -158,10 +158,10 @@
 
     ![화면 캡처 2023-09-01 235603](https://github.com/DevTae/StockPricePredictionPreview/assets/55177359/2e18b98a-8ae3-4a3a-b618-eba4ee8e7e85)
     - 결국에는 `Out of memory` 로 인하여 생긴 문제였고, 이에 대하여 `메모리 최적화`, `스왑 공간 확인` 등의 방법을 바탕으로 해결할 예정이다.
-    - 원인을 찾기 위하여 `psutil` 라이브러리를 통한 `메모리 사용량 디버깅`을 진행하고자 한다.
-      - 로그 출력에 메모리 사용량(Memory Usage) 또한 출력하게 하여 확인해본 결과, 메모리 사용량이 계속해서 늘어나는 현상이 발견되었다.
+  - 종료 원인을 찾기 위하여 `psutil` 라이브러리를 통한 `메모리 사용량 디버깅`을 진행하고자 한다.
+    - 로그 출력에 메모리 사용량(Memory Usage) 또한 출력하게 하여 확인해본 결과, 메모리 사용량이 계속해서 늘어나는 현상이 발견되었다.
 
-        ![image](https://github.com/DevTae/StockPricePredictionPreview/assets/55177359/a34ba749-e967-448a-a7f1-320e3cb2a906)
+      ![image](https://github.com/DevTae/StockPricePredictionPreview/assets/55177359/a34ba749-e967-448a-a7f1-320e3cb2a906)
     - 해당 현상에 대한 원인을 찾고자 한다.
 
 <br/>
