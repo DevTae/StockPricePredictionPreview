@@ -192,7 +192,7 @@
 ### 2023.09.03
 
 #### 현재 진행 상황
-  - `Memory Leaking` 현상의 원인을 찾을 때 `tracemalloc` 라이브러리가 기능이 좋다는 이야기를 듣고 해당 라이브러리를 사용하여 문제를 해결하고 있는 중이다.
+  - `Memory Leaking` 현상의 원인을 찾을 때 `tracemalloc` 라이브러리가 어떤 부분에서 메모리가 쌓이는지 볼 수 있다고 하여 해당 라이브러리를 사용하여 문제를 해결하고 있는 중이다.
     - 우선, 해시 테이블 캐시를 제거한 상태에서의 `Memory Leaking` 현상을 분석해보았다.
 
     ![2023-09-04 metrics 문제 확인](https://github.com/DevTae/StockPricePredictionPreview/assets/55177359/f0dbfb02-3307-4206-b7d3-e65e03f3a860)
