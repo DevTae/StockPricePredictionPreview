@@ -186,3 +186,20 @@
     - `guppy3` 는 `torch` 변수에 대한 크기를 반영하지 않기 때문에, 어디에선가의 `torch` 변수에 의해 `Memory Leaking` 현상이 일어나고 있다.
     - `Garbage Collector (GC)` 가 정상 작동하지 않고 있다.
   - 계속해서 문제를 해결하기 위해 추가적으로 조사할 예정이다.
+
+<br/>
+
+### 2023.09.03
+
+#### 현재 진행 상황
+  - `Memory Leaking` 현상의 원인을 찾을 때 `tracemalloc` 라이브러리가 기능이 좋다는 이야기를 듣고 해당 라이브러리를 사용하여 문제를 해결하고 있는 중이다.
+    - 우선, 해시 테이블 캐시를 제거한 상태에서의 `Memory Leaking` 현상을 분석해보았다.
+
+    ![2023-09-04 metrics 문제 확인](https://github.com/DevTae/StockPricePredictionPreview/assets/55177359/f0dbfb02-3307-4206-b7d3-e65e03f3a860)
+    - 그 결과, 평가 지표를 계산하는 부분의 `abs` 함수에서 메모리가 누수되고 있는 현상을 발견하였다.
+    - 해당 부분을 파이썬의 `삼항 연산자`로 대체하였고, 평가 지표 계산하는 부분의 메모리 누수를 해결할 수 있었다.
+      - `dist = (target[0] - y_hat[0] if target[0] > y_hat[0] else y_hat[0] - target[0])`
+    - 이후, 다시 캐시를 적용한 뒤에 학습을 돌렸을 때 아직도 `Memory Leaking` 현상이 의심되는 `Memory Usage` 동향이 발견되었다.
+    - 이에 따른 원인을 계속해서 분석하고 해결할 예정이다.
+   
+<br/>
