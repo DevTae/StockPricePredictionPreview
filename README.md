@@ -205,3 +205,14 @@
     - 이에 따른 원인을 계속해서 분석하고 해결할 예정이다.
    
 <br/>
+
+### 2023.09.04
+
+#### 현재 진행 상황
+  - `tracemalloc` 으로 확인해보았을 때, `abs` 에 대한 메모리 누수를 해결한 후부터 아래 그림처럼 눈에 띄는 메모리 누수의 경우 발견되지 않았다.
+
+    ![문제 없음 발견](https://github.com/DevTae/StockPricePredictionPreview/assets/55177359/fb440ed8-11ee-45ec-95a1-01ed7a48ef67)
+  - 하지만, `garbage collector` 라이브러리를 통하여 직접 확인해보았을 때, 아래 그림처럼 가비지 콜렉터의 `2 세대` 에 대한 메모리가 누적됨을 발견하였다.
+
+    ![gc 작동 중 2세대 계속 증가](https://github.com/DevTae/StockPricePredictionPreview/assets/55177359/467c4508-c13b-4fb2-a420-05cf53328ce2)
+  
