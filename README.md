@@ -1,6 +1,6 @@
 ### `StockPricePrediction`'s Key Points
 - 프로젝트 준비
-  - `주가 분석 모델 툴킷 제작` 및 `모델 설계` (RNN 기반) 진행
+  - `주가 예측 모델 툴킷 제작` 및 `모델 설계` (RNN 기반) 진행
   - 손실 함수(CrossEntropyLoss) 및 평가 지표(Accruacy) 설정
   - 데이터 수집은 [`StockDatabase`](https://github.com/DevTae/StockToolsPreview) 프로젝트를 바탕으로 `metadata` 파일을 제작하는 방식으로 진행
     
